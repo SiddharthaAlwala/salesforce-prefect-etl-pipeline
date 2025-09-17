@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# Local data & artifacts
+data/
+!data/.gitkeep
+
+# Env & secrets
+.env
+
+# OS/IDE
+.DS_Store
+.vscode/

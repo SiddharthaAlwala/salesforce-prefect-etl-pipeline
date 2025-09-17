@@ -1,0 +1,5 @@
+prefect>=2.16
+polars
+simple-salesforce
+python-dotenv
+pyarrow
