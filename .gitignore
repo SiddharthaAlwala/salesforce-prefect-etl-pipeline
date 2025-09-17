@@ -1,14 +1,17 @@
-# Python
+# envs & secrets
+.conda_env/
+.venv/
+.env
+
+# data/artifacts
+data/
+*.parquet
+*.json
+
+# python
 __pycache__/
 *.pyc
 
-# Local data & artifacts
-data/
-!data/.gitkeep
-
-# Env & secrets
-.env
-
-# OS/IDE
-.DS_Store
+# IDE/OS
 .vscode/
+.DS_Store
