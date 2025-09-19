@@ -1,5 +1,5 @@
-from flows.sf_csv_polars_json_flow import sf_csv_polars_json_pipeline
+from flows.sf_etl_orchestrator_flow import sf_etl_orchestrator
 if __name__ == "__main__":
     for i in range(3):
         print(f"\n=== Run #{i+1} ===")
-        sf_csv_polars_json_pipeline(object_name="Account")
+        sf_etl_orchestrator(object_name="Account")
