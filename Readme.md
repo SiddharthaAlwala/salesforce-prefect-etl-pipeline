@@ -19,12 +19,19 @@ A **config-driven** ETL for Salesforce data that scales across many objects. You
 ## ✨ Features
 
 **Object-aware ETL** driven by configs/salesforce_objects.py
+
 **Phase-1 (Sequential)**: SOQL → CSV → Polars aggregation → JSON
+
 **Phase-2 (Parallel QA)**: schema/non-empty gates → dedup/profile/parquet/drift
+
 **Single Extract, Dual Branches**: orchestrator extracts once and fans out
+
 **Robust JSON serialization**: handles datetimes, Polars/NumPy types
+
 **Safe I/O**: timestamped raw filenames to avoid clobbering across runs
+
 **Scheduling**: simple cron via flow.serve() every 15 minutes
+
 **Extensible**: add custom Salesforce objects & validators easily
 
 
@@ -118,9 +125,13 @@ Run the flow 3 times for testing:
 
 **Python 3.10+**
 **Prefect 2** (flows, task runners, scheduling)
+
 **Polars** (fast DataFrame engine)
+
 **simple-salesforce** (Salesforce API)
+
 **python-dotenv** (env management)
+
 **PyArrow / Parquet** (columnar snapshots)
 
 ## ✅ Notes
@@ -129,7 +140,11 @@ You can pass a **custom SOQL** to the orchestrator/flows; processing still uses 
 ```bash
 group_by/metrics.
 ```
+
 Tasks include **retries** and structured **logging**.
+
 Empty pulls are handled gracefully: headers-only CSV is written; QA will flag empty data.
+
 Raw files are timestamped by default to avoid clobbering concurrent runs.
+
 QA failures can be **advisory** (non-strict) or **strict** (fail_on_qa_error=True).
